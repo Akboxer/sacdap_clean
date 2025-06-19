@@ -210,3 +210,8 @@ def view_visitors():
     cur.close()
     conn.close()
     return render_template('admin_visitors.html', visitors=visitors)
+
+
+@app.route('/admin')
+def admin_dashboard():
+    return render_template('admin_dashboard.html')
