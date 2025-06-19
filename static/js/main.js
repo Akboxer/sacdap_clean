@@ -41,10 +41,7 @@ function initializeFormValidation() {
 
       if (!isValid) {
         e.preventDefault();
-        showAlert(
-          "Please correct the errors in the form before submitting.",
-          "danger"
-        );
+        showAlert("Please correct the errors in the form before submitting.", "danger");
         // Scroll to first invalid field
         const firstInvalid = form.querySelector(".is-invalid");
         if (firstInvalid) {
@@ -136,9 +133,7 @@ function initializeAnimations() {
   });
 
   // Hover effects for course cards
-  const courseCards = document.querySelectorAll(
-    ".course-card, .course-detail-card"
-  );
+  const courseCards = document.querySelectorAll(".course-card, .course-detail-card");
   courseCards.forEach((card) => {
     card.addEventListener("mouseenter", function () {
       this.style.transform = "translateY(-5px)";
@@ -230,9 +225,7 @@ function initializeSearchDropdown() {
 // Initialize tooltips and popovers
 function initializeTooltips() {
   // Initialize Bootstrap tooltips
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
@@ -385,16 +378,10 @@ function enhanceAccessibility() {
   forms.forEach((form) => {
     const inputs = form.querySelectorAll("input, select, textarea");
     inputs.forEach((input) => {
-      if (
-        !input.getAttribute("aria-label") &&
-        !input.getAttribute("aria-labelledby")
-      ) {
+      if (!input.getAttribute("aria-label") && !input.getAttribute("aria-labelledby")) {
         const label = form.querySelector(`label[for="${input.id}"]`);
         if (label) {
-          input.setAttribute(
-            "aria-labelledby",
-            label.id || "label-" + input.id
-          );
+          input.setAttribute("aria-labelledby", label.id || "label-" + input.id);
         }
       }
     });
@@ -431,22 +418,12 @@ function initializePerformanceMonitoring() {
 
   // Track JavaScript errors
   window.addEventListener("error", (e) => {
-    console.error(
-      "JavaScript error:",
-      e.message,
-      "at",
-      e.filename,
-      ":",
-      e.lineno
-    );
+    console.error("JavaScript error:", e.message, "at", e.filename, ":", e.lineno);
   });
 }
 
 // Initialize performance monitoring in development
-if (
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1"
-) {
+if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
   initializePerformanceMonitoring();
 }
 
@@ -465,7 +442,6 @@ if (typeof module !== "undefined" && module.exports) {
 //
 //
 
-
 //just trying to connect pop up to server and db
 //
 // Registration Pop-up Logic
@@ -475,7 +451,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalElement = document.getElementById(modalId);
   const hasSeenPopupKey = "hasSeenRegistrationPopupInSession";
 
-  
   if (sessionStorage.getItem(hasSeenPopupKey) === "true") {
     return;
   }
@@ -517,7 +492,6 @@ document.addEventListener("DOMContentLoaded", function () {
             registrationModal.hide();
           }
 
-          
           registrationForm.reset();
         })
         .catch((error) => {

@@ -505,12 +505,7 @@ Initial Registration Pop-up styling */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /*shadow for depth*/
   padding: 1.5rem;
   backdrop-filter: blur(10px); /* Frosted glass effect */
-  background-color: rgba(
-    237,
-    30,
-    30,
-    0.15
-  ); /* Transparent red background to match the aesthetics of the website*/
+  background-color: rgba(237, 30, 30, 0.15); /* Transparent red background to match the aesthetics of the website*/
   border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
 }
 
@@ -564,12 +559,7 @@ Initial Registration Pop-up styling */
   padding: 0.75rem 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.605); /* Keep shadow none for normal state if that's your site's preference */
   transition: all 0.3s ease; /* Add transition for smooth effect */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.4
-  ); /* ADDED: Slightly transparent background for input */
+  background-color: rgba(255, 255, 255, 0.4); /* ADDED: Slightly transparent background for input */
   color: rgba(0, 0, 0, 0.7); /* ADDED: Ensure input text is white */
   font-weight: 500;
 }
@@ -583,9 +573,7 @@ Initial Registration Pop-up styling */
 
 /* Scoped .form-control:focus for elements INSIDE the modal */
 #registrationModal .form-control:focus {
-  border-color: var(
-    --sacdap-white
-  ); /* White border on focus for consistency with glass */
+  border-color: var(--sacdap-white); /* White border on focus for consistency with glass */
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); /* Lighter shadow on focus */
   background-color: rgba(255, 255, 255, 0.2);
 }
