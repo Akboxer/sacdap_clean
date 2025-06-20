@@ -1,5 +1,4 @@
-{% extends "base.html" %} {% block title %}SACDAP - Professional Career Training
-Institute{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}SACDAP - Professional Career Training Institute{% endblock %} {% block content %}
 <!-- Hero Section -->
 <section class="hero-section bg-danger text-white py-5">
   <div class="container">
@@ -7,21 +6,10 @@ Institute{% endblock %} {% block content %}
       <div class="col-lg-8">
         <h1 class="display-4 fw-bold mb-3">SACDAP</h1>
         <h2 class="h3 mb-3">Skill and Career Development and Placement</h2>
-        <p class="lead mb-4">
-          Empowering professionals since 2018 with industry-relevant training in
-          Accounting, Stock Market, and IT. Transform your career with our
-          expert-designed courses.
-        </p>
+        <p class="lead mb-4">Empowering professionals since 2018 with industry-relevant training in Accounting, Stock Market, and IT. Transform your career with our expert-designed courses.</p>
         <div class="d-flex gap-3">
-          <a href="{{ url_for('enroll') }}" class="btn btn-light btn-lg">
-            <i class="fas fa-user-plus me-2"></i>Start Your Journey
-          </a>
-          <a
-            href="{{ url_for('contact') }}"
-            class="btn btn-outline-light btn-lg"
-          >
-            <i class="fas fa-phone me-2"></i>Contact Us
-          </a>
+          <a href="{{ url_for('enroll') }}" class="btn btn-light btn-lg"> <i class="fas fa-user-plus me-2"></i>Start Your Journey </a>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg"> <i class="fas fa-phone me-2"></i>Contact Us </a>
         </div>
       </div>
       <div class="col-lg-4 text-center">
@@ -35,12 +23,8 @@ Institute{% endblock %} {% block content %}
 <section class="py-5">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="heading-animation display-6 fw-bold text-dark">
-        Our Course Categories
-      </h2>
-      <p class="lead text-muted">
-        Choose from our three specialized career tracks
-      </p>
+      <h2 class="heading-animation display-6 fw-bold text-dark">Our Course Categories</h2>
+      <p class="lead text-muted">Choose from our three specialized career tracks</p>
     </div>
 
     <div class="row g-4">
@@ -66,18 +50,8 @@ Institute{% endblock %} {% block content %}
           </div>
           <div class="card-footer bg-light">
             <div class="d-flex gap-2">
-              <a
-                href="{{ url_for('accounts') }}"
-                class="btn btn-outline-danger flex-fill"
-              >
-                <i class="fas fa-info-circle me-1"></i>Learn More
-              </a>
-              <a
-                href="{{ url_for('enroll') }}"
-                class="btn btn-danger flex-fill"
-              >
-                <i class="fas fa-user-plus me-1"></i>Enroll Now
-              </a>
+              <a href="{{ url_for('accounts') }}" class="btn btn-outline-danger flex-fill"> <i class="fas fa-info-circle me-1"></i>Learn More </a>
+              <a href="{{ url_for('enroll') }}" class="btn btn-danger flex-fill"> <i class="fas fa-user-plus me-1"></i>Enroll Now </a>
             </div>
           </div>
         </div>
@@ -105,18 +79,8 @@ Institute{% endblock %} {% block content %}
           </div>
           <div class="card-footer bg-light">
             <div class="d-flex gap-2">
-              <a
-                href="{{ url_for('stock_market') }}"
-                class="btn btn-outline-danger flex-fill"
-              >
-                <i class="fas fa-info-circle me-1"></i>Learn More
-              </a>
-              <a
-                href="{{ url_for('enroll') }}"
-                class="btn btn-danger flex-fill"
-              >
-                <i class="fas fa-user-plus me-1"></i>Enroll Now
-              </a>
+              <a href="{{ url_for('stock_market') }}" class="btn btn-outline-danger flex-fill"> <i class="fas fa-info-circle me-1"></i>Learn More </a>
+              <a href="{{ url_for('enroll') }}" class="btn btn-danger flex-fill"> <i class="fas fa-user-plus me-1"></i>Enroll Now </a>
             </div>
           </div>
         </div>
@@ -144,18 +108,8 @@ Institute{% endblock %} {% block content %}
           </div>
           <div class="card-footer bg-light">
             <div class="d-flex gap-2">
-              <a
-                href="{{ url_for('it_courses') }}"
-                class="btn btn-outline-danger flex-fill"
-              >
-                <i class="fas fa-info-circle me-1"></i>Learn More
-              </a>
-              <a
-                href="{{ url_for('enroll') }}"
-                class="btn btn-danger flex-fill"
-              >
-                <i class="fas fa-user-plus me-1"></i>Enroll Now
-              </a>
+              <a href="{{ url_for('it_courses') }}" class="btn btn-outline-danger flex-fill"> <i class="fas fa-info-circle me-1"></i>Learn More </a>
+              <a href="{{ url_for('enroll') }}" class="btn btn-danger flex-fill"> <i class="fas fa-user-plus me-1"></i>Enroll Now </a>
             </div>
           </div>
         </div>
@@ -168,12 +122,8 @@ Institute{% endblock %} {% block content %}
 <section class="bg-light py-5">
   <div class="container">
     <div class="why-choose-heading-container text-center mb-5">
-      <h2 class="why-choose-heading display-6 fw-bold text-dark">
-        Why Choose SACDAP?
-      </h2>
-      <p class="lead text-muted">
-        Experience the difference with our professional training approach
-      </p>
+      <h2 class="why-choose-heading display-6 fw-bold text-dark">Why Choose SACDAP?</h2>
+      <p class="lead text-muted">Experience the difference with our professional training approach</p>
     </div>
 
     <div class="row g-4">
@@ -181,36 +131,28 @@ Institute{% endblock %} {% block content %}
         <div class="bg-white rounded p-4 shadow-sm h-100">
           <i class="fas fa-award fa-3x text-danger mb-3"></i>
           <h5>Industry Expert Trainers</h5>
-          <p class="text-muted">
-            Learn from professionals with real industry experience
-          </p>
+          <p class="text-muted">Learn from professionals with real industry experience</p>
         </div>
       </div>
       <div class="col-md-3 text-center">
         <div class="bg-white rounded p-4 shadow-sm h-100">
           <i class="fas fa-briefcase fa-3x text-danger mb-3"></i>
           <h5>Placement Assistance</h5>
-          <p class="text-muted">
-            Dedicated support for career placement and growth
-          </p>
+          <p class="text-muted">Dedicated support for career placement and growth</p>
         </div>
       </div>
       <div class="col-md-3 text-center">
         <div class="bg-white rounded p-4 shadow-sm h-100">
           <i class="fas fa-clock fa-3x text-danger mb-3"></i>
           <h5>Flexible Timings</h5>
-          <p class="text-muted">
-            Choose from multiple batch timings that suit your schedule
-          </p>
+          <p class="text-muted">Choose from multiple batch timings that suit your schedule</p>
         </div>
       </div>
       <div class="col-md-3 text-center">
         <div class="bg-white rounded p-4 shadow-sm h-100">
           <i class="fas fa-certificate fa-3x text-danger mb-3"></i>
           <h5>Industry Certification</h5>
-          <p class="text-muted">
-            Receive recognized certifications upon course completion
-          </p>
+          <p class="text-muted">Receive recognized certifications upon course completion</p>
         </div>
       </div>
     </div>
@@ -221,66 +163,37 @@ Institute{% endblock %} {% block content %}
 <section class="py-5">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="our-facility-heading display-6 fw-bold text-dark">
-        Our Modern Training Facility
-      </h2>
-      <p class="lead text-muted">
-        Experience learning in our state-of-the-art classrooms and
-        infrastructure
-      </p>
+      <h2 class="our-facility-heading display-6 fw-bold text-dark">Our Modern Training Facility</h2>
+      <p class="lead text-muted">Experience learning in our state-of-the-art classrooms and infrastructure</p>
     </div>
 
     <div class="row g-4">
       <div class="col-lg-4 col-md-6">
         <div class="card h-100 shadow-sm facility-card">
-          <img
-            src="{{ url_for('static', filename='images/office1.jpg') }}"
-            class="card-img-top"
-            style="height: 250px; object-fit: cover"
-            alt="SACDAP Office Reception"
-          />
+          <img src="{{ url_for('static', filename='images/office1.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover" alt="SACDAP Office Reception" />
           <div class="card-body">
             <h6 class="card-title">Reception & Counseling Area</h6>
-            <p class="card-text text-muted">
-              Modern reception with dedicated counseling space for student
-              guidance and course information.
-            </p>
+            <p class="card-text text-muted">Modern reception with dedicated counseling space for student guidance and course information.</p>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6">
         <div class="card h-100 shadow-sm facility-card">
-          <img
-            src="{{ url_for('static', filename='images/classroom1.jpg') }}"
-            class="card-img-top"
-            style="height: 250px; object-fit: cover"
-            alt="SACDAP IT Training Lab"
-          />
+          <img src="{{ url_for('static', filename='images/classroom1.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover" alt="SACDAP IT Training Lab" />
           <div class="card-body">
             <h6 class="card-title">Computer Training Lab</h6>
-            <p class="card-text text-muted">
-              Fully equipped computer lab with individual workstations for
-              hands-on IT and programming training.
-            </p>
+            <p class="card-text text-muted">Fully equipped computer lab with individual workstations for hands-on IT and programming training.</p>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6">
         <div class="card h-100 shadow-sm facility-card">
-          <img
-            src="{{ url_for('static', filename='images/classroom2.jpg') }}"
-            class="card-img-top"
-            style="height: 250px; object-fit: cover"
-            alt="SACDAP Smart Classroom"
-          />
+          <img src="{{ url_for('static', filename='images/classroom2.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover" alt="SACDAP Smart Classroom" />
           <div class="card-body">
             <h6 class="card-title">Smart Classrooms</h6>
-            <p class="card-text text-muted">
-              Air-conditioned classrooms with modern teaching aids, comfortable
-              seating, and interactive learning environment.
-            </p>
+            <p class="card-text text-muted">Air-conditioned classrooms with modern teaching aids, comfortable seating, and interactive learning environment.</p>
           </div>
         </div>
       </div>
@@ -292,17 +205,10 @@ Institute{% endblock %} {% block content %}
 <section class="py-5 bg-secondary text-white">
   <div class="container text-center">
     <h2 class="display-6 fw-bold mb-3">Ready to Transform Your Career?</h2>
-    <p class="lead mb-4">
-      Join thousands of successful professionals who started their journey with
-      SACDAP
-    </p>
+    <p class="lead mb-4">Join thousands of successful professionals who started their journey with SACDAP</p>
     <div class="d-flex justify-content-center gap-3">
-      <a href="{{ url_for('enroll') }}" class="btn btn-danger btn-lg">
-        <i class="fas fa-rocket me-2"></i>Enroll Today
-      </a>
-      <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">
-        <i class="fas fa-comments me-2"></i>Talk to Expert
-      </a>
+      <a href="{{ url_for('enroll') }}" class="btn btn-danger btn-lg"> <i class="fas fa-rocket me-2"></i>Enroll Today </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg"> <i class="fas fa-comments me-2"></i>Talk to Expert </a>
     </div>
   </div>
 </section>

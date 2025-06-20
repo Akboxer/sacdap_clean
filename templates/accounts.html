@@ -1,13 +1,10 @@
-{% extends "base.html" %} {% block title %}{{ courses.title }} - SACDAP{%
-endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}{{ courses.title }} - SACDAP{% endblock %} {% block content %}
 <!-- Page Header -->
 <section class="hero-section bg-danger text-white py-5">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8">
-        <h1 class="display-5 fw-bold mb-3">
-          <i class="fas fa-calculator me-3"></i>{{ courses.title }}
-        </h1>
+        <h1 class="display-5 fw-bold mb-3"><i class="fas fa-calculator me-3"></i>{{ courses.title }}</h1>
         <p class="lead">{{ courses.description }}</p>
       </div>
       <div class="col-lg-4 text-center">
@@ -21,39 +18,23 @@ endblock %} {% block content %}
 <section class="py-5 bg-light">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="display-6 fw-bold text-dark">
-        Professional Learning Environment
-      </h2>
-      <p class="lead text-muted">
-        Experience accounting education in our modern, well-equipped facilities
-      </p>
+      <h2 class="display-6 fw-bold text-dark">Professional Learning Environment</h2>
+      <p class="lead text-muted">Experience accounting education in our modern, well-equipped facilities</p>
     </div>
 
     <div class="row g-4 mb-5">
       <div class="col-md-4">
         <div class="card shadow-sm border-0">
-          <img
-            src="{{ url_for('static', filename='images/office1.jpg') }}"
-            class="card-img-top"
-            style="height: 200px; object-fit: cover"
-            alt="SACDAP Reception Area"
-          />
+          <img src="{{ url_for('static', filename='images/office1.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover" alt="SACDAP Reception Area" />
           <div class="card-body text-center">
             <h6 class="card-title text-danger">Reception & Counseling</h6>
-            <p class="card-text small">
-              Professional guidance and course consultation
-            </p>
+            <p class="card-text small">Professional guidance and course consultation</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card shadow-sm border-0">
-          <img
-            src="{{ url_for('static', filename='images/classroom1.jpg') }}"
-            class="card-img-top"
-            style="height: 200px; object-fit: cover"
-            alt="SACDAP Training Lab"
-          />
+          <img src="{{ url_for('static', filename='images/classroom1.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover" alt="SACDAP Training Lab" />
           <div class="card-body text-center">
             <h6 class="card-title text-danger">Computer Training Lab</h6>
             <p class="card-text small">Digital accounting software training</p>
@@ -62,17 +43,10 @@ endblock %} {% block content %}
       </div>
       <div class="col-md-4">
         <div class="card shadow-sm border-0">
-          <img
-            src="{{ url_for('static', filename='images/classroom2.jpg') }}"
-            class="card-img-top"
-            style="height: 200px; object-fit: cover"
-            alt="SACDAP Classroom"
-          />
+          <img src="{{ url_for('static', filename='images/classroom2.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover" alt="SACDAP Classroom" />
           <div class="card-body text-center">
             <h6 class="card-title text-danger">Theory Classrooms</h6>
-            <p class="card-text small">
-              Interactive accounting concept learning
-            </p>
+            <p class="card-text small">Interactive accounting concept learning</p>
           </div>
         </div>
       </div>
@@ -83,8 +57,7 @@ endblock %} {% block content %}
 <!-- Featured Course - Corporate Accountant Training -->
 <section class="py-5">
   <div class="container">
-    {% for course in courses.courses %} {% if course.id ==
-    'corporate_accountant' %}
+    {% for course in courses.courses %} {% if course.id == 'corporate_accountant' %}
     <div class="card shadow-lg border-0 mb-5">
       <div class="card-header bg-danger text-white text-center py-4">
         <h2 class="mb-0">
@@ -97,29 +70,20 @@ endblock %} {% block content %}
         <p class="lead">{{ course.description }}</p>
 
         <!-- Three Phases -->
-        <h4 class="fw-bold text-danger mb-4">
-          Course Structure - Three Comprehensive Phases
-        </h4>
+        <h4 class="fw-bold text-danger mb-4">Course Structure - Three Comprehensive Phases</h4>
         <div class="row g-4">
           {% for phase in course.phases %}
           <div class="col-md-4">
             <div class="card h-100 border-danger">
-              <div
-                class="card-header bg-outline-danger text-danger text-center"
-              >
-                <h5 class="mb-0">
-                  <i class="fas fa-layer-group me-2"></i>Phase {{ phase.phase }}
-                </h5>
+              <div class="card-header bg-outline-danger text-danger text-center">
+                <h5 class="mb-0"><i class="fas fa-layer-group me-2"></i>Phase {{ phase.phase }}</h5>
                 <small class="text-muted">{{ phase.duration }}</small>
               </div>
               <div class="card-body">
                 <h6 class="fw-bold">{{ phase.title }}</h6>
                 <ul class="list-unstyled">
                   {% for topic in phase.topics %}
-                  <li class="mb-2">
-                    <i class="fas fa-check-circle text-success me-2"></i>{{
-                    topic }}
-                  </li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>{{ topic }}</li>
                   {% endfor %}
                 </ul>
               </div>
@@ -135,13 +99,7 @@ endblock %} {% block content %}
             <small class="d-block text-muted">Coming Soon</small>
           </button>
         </div>
-        <a
-          href="{{ url_for('enroll', course=course.id) }}"
-          class="btn btn-danger btn-lg"
-        >
-          <i class="fas fa-user-plus me-2"></i>Enroll in Corporate Accountant
-          Training
-        </a>
+        <a href="{{ url_for('enroll', course=course.id) }}" class="btn btn-danger btn-lg"> <i class="fas fa-user-plus me-2"></i>Enroll in Corporate Accountant Training </a>
       </div>
     </div>
     {% endif %} {% endfor %}
@@ -151,13 +109,10 @@ endblock %} {% block content %}
 <!-- Other Accounting Courses -->
 <section class="py-5">
   <div class="container">
-    <h2 class="display-6 fw-bold text-center text-dark mb-5">
-      Other Accounting Courses
-    </h2>
+    <h2 class="display-6 fw-bold text-center text-dark mb-5">Other Accounting Courses</h2>
 
     <div class="row g-4">
-      {% for course in courses.courses %} {% if course.id !=
-      'corporate_accountant' %}
+      {% for course in courses.courses %} {% if course.id != 'corporate_accountant' %}
       <div class="col-lg-6">
         <div class="card h-100 shadow-sm course-detail-card">
           <div class="card-header bg-light">
@@ -174,59 +129,27 @@ endblock %} {% block content %}
               <h6 class="fw-bold text-dark">Course Highlights:</h6>
               <ul class="list-unstyled">
                 {% if course.id == 'basic_accounting' %}
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Accounting
-                  fundamentals
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Journal entries
-                  & ledgers
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Financial
-                  statement preparation
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Basic tax
-                  concepts
-                </li>
+                <li><i class="fas fa-check text-success me-2"></i>Accounting fundamentals</li>
+                <li><i class="fas fa-check text-success me-2"></i>Journal entries & ledgers</li>
+                <li><i class="fas fa-check text-success me-2"></i>Financial statement preparation</li>
+                <li><i class="fas fa-check text-success me-2"></i>Basic tax concepts</li>
                 {% elif course.id == 'advanced_accounting' %}
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Complex
-                  transactions
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Consolidation
-                  accounting
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Partnership
-                  accounting
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Advanced tax
-                  planning
-                </li>
+                <li><i class="fas fa-check text-success me-2"></i>Complex transactions</li>
+                <li><i class="fas fa-check text-success me-2"></i>Consolidation accounting</li>
+                <li><i class="fas fa-check text-success me-2"></i>Partnership accounting</li>
+                <li><i class="fas fa-check text-success me-2"></i>Advanced tax planning</li>
                 {% endif %}
               </ul>
             </div>
           </div>
           <div class="card-footer bg-light">
             <div class="d-flex gap-2 mb-2">
-              <button
-                class="btn btn-outline-secondary btn-sm flex-fill"
-                disabled
-              >
+              <button class="btn btn-outline-secondary btn-sm flex-fill" disabled>
                 <i class="fas fa-file-pdf me-1"></i>Course PDF
                 <small class="d-block text-muted">Coming Soon</small>
               </button>
             </div>
-            <a
-              href="{{ url_for('enroll', course=course.id) }}"
-              class="btn btn-danger w-100"
-            >
-              <i class="fas fa-user-plus me-2"></i>Enroll in {{ course.name }}
-            </a>
+            <a href="{{ url_for('enroll', course=course.id) }}" class="btn btn-danger w-100"> <i class="fas fa-user-plus me-2"></i>Enroll in {{ course.name }} </a>
           </div>
         </div>
       </div>
@@ -240,43 +163,31 @@ endblock %} {% block content %}
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-6 fw-bold text-dark">Accounting Career Paths</h2>
-      <p class="lead text-muted">
-        Discover diverse opportunities in the accounting profession
-      </p>
+      <p class="lead text-muted">Discover diverse opportunities in the accounting profession</p>
     </div>
 
     <div class="row g-4">
       <div class="col-md-4">
         <div class="text-center">
-          <div
-            class="bg-white rounded-circle p-4 d-inline-block shadow-sm mb-3"
-          >
+          <div class="bg-white rounded-circle p-4 d-inline-block shadow-sm mb-3">
             <i class="fas fa-building fa-2x text-danger"></i>
           </div>
           <h5>Corporate Accountant</h5>
-          <p class="text-muted">
-            Manage financial records and reporting for corporations
-          </p>
+          <p class="text-muted">Manage financial records and reporting for corporations</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="text-center">
-          <div
-            class="bg-white rounded-circle p-4 d-inline-block shadow-sm mb-3"
-          >
+          <div class="bg-white rounded-circle p-4 d-inline-block shadow-sm mb-3">
             <i class="fas fa-search-dollar fa-2x text-danger"></i>
           </div>
           <h5>Financial Analyst</h5>
-          <p class="text-muted">
-            Analyze financial data to guide business decisions
-          </p>
+          <p class="text-muted">Analyze financial data to guide business decisions</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="text-center">
-          <div
-            class="bg-white rounded-circle p-4 d-inline-block shadow-sm mb-3"
-          >
+          <div class="bg-white rounded-circle p-4 d-inline-block shadow-sm mb-3">
             <i class="fas fa-balance-scale fa-2x text-danger"></i>
           </div>
           <h5>Tax Consultant</h5>
@@ -292,9 +203,7 @@ endblock %} {% block content %}
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-6 fw-bold text-dark">Professional Certifications</h2>
-      <p class="lead text-muted">
-        Prepare for industry-recognized certifications
-      </p>
+      <p class="lead text-muted">Prepare for industry-recognized certifications</p>
     </div>
 
     <div class="row g-4 justify-content-center">
@@ -327,12 +236,8 @@ endblock %} {% block content %}
 <section class="py-5 bg-secondary text-white">
   <div class="container text-center">
     <h2 class="display-6 fw-bold mb-3">Build Your Accounting Career</h2>
-    <p class="lead mb-4">
-      Master financial management and advance your professional journey
-    </p>
-    <a href="{{ url_for('enroll') }}" class="btn btn-danger btn-lg">
-      <i class="fas fa-calculator me-2"></i>Start Your Training
-    </a>
+    <p class="lead mb-4">Master financial management and advance your professional journey</p>
+    <a href="{{ url_for('enroll') }}" class="btn btn-danger btn-lg"> <i class="fas fa-calculator me-2"></i>Start Your Training </a>
   </div>
 </section>
 {% endblock %}
