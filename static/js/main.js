@@ -15,6 +15,13 @@ function initializeFormValidation() {
   const forms = document.querySelectorAll("form");
 
   forms.forEach((form) => {
+    //check if the form is "Navbar Course Selection From"
+    //if true, in that case we will skip it because is has nothing to validate
+    //this prevents the "green check" mark from messing the layout of the navbar
+    if (form.id === "navbarCourseSearchForm") {
+      return;
+    }
+
     // Real-time validation
     const inputs = form.querySelectorAll("input, select, textarea");
     inputs.forEach((input) => {
@@ -501,3 +508,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// This function is called by the Course Selection search form
+// in the navbar
+function redirectToCourseCard(targetUrl) {
+  if (targetUrl) {
+    window.location.href = targetUrl;
+  }
+}
