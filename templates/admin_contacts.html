@@ -37,6 +37,21 @@
       background-color: #f1f1f1;
     }
 
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+
     @media (max-width: 768px) {
       table {
         font-size: 14px;
@@ -50,29 +65,36 @@
 </head>
 <body>
   <h2>Contact Form Submissions</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Subject</th>
-        <th>Message</th>
-        <th>Created At</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for contact in contacts %}
-      <tr>
-        <td>{{ contact[0] }}</td>
-        <td>{{ contact[1] }}</td>
-        <td>{{ contact[2] }}</td>
-        <td>{{ contact[3] }}</td>
-        <td>{{ contact[4] }}</td>
-        <td>{{ contact[5].strftime('%Y-%m-%d %H:%M:%S') }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+  <form method="POST" action="/admin/contacts/archive">
+    <table>
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for contact in contacts %}
+        <tr>
+          <td><input type="checkbox" name="selected_ids" value="{{ contact[0] }}"></td>
+          <td>{{ contact[0] }}</td>
+          <td>{{ contact[1] }}</td>
+          <td>{{ contact[2] }}</td>
+          <td>{{ contact[3] }}</td>
+          <td>{{ contact[4] }}</td>
+          <td>{{ contact[5].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <button type="submit" class="submit-btn">DONE</button>
+  </form>
 </body>
 </html>

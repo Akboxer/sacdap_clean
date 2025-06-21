@@ -33,33 +33,53 @@
     tr:hover {
       background-color: #f1f1f1;
     }
+    .submit-btn {
+      margin: 20px auto;
+      display: block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
   <h2>Enrollment Records</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Course Interested</th>
-        <th>Message</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for e in enrollments %}
-      <tr>
-        <td>{{ e[0] }}</td>
-        <td>{{ e[1] }}</td>
-        <td>{{ e[2] }}</td>
-        <td>{{ e[3] }}</td>
-        <td>{{ e[4] }}</td>
-        <td>{{ e[5] }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+  <form method="POST" action="/admin/enrollments/archive">
+    <table>
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Course Interested</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in enrollments %}
+        <tr>
+          <td><input type="checkbox" name="selected_ids" value="{{ e[0] }}"></td>
+          <td>{{ e[0] }}</td>
+          <td>{{ e[1] }}</td>
+          <td>{{ e[2] }}</td>
+          <td>{{ e[3] }}</td>
+          <td>{{ e[4] }}</td>
+          <td>{{ e[5] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <button type="submit" class="submit-btn">DONE</button>
+  </form>
 </body>
 </html>

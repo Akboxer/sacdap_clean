@@ -40,6 +40,21 @@
       background-color: #f1f1f1;
     }
 
+    .submit-btn {
+      margin: 20px auto;
+      display: block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #388E3C;
+    }
+
     @media (max-width: 768px) {
       table {
         width: 100%;
@@ -54,27 +69,34 @@
 </head>
 <body>
   <h2>PopUp Submissions</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Course</th>
-        <th>Submitted At</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for visitor in visitors %}
-      <tr>
-        <td>{{ visitor[0] }}</td>
-        <td>{{ visitor[1] }}</td>
-        <td>{{ visitor[2] }}</td>
-        <td>{{ visitor[3] }}</td>
-        <td>{{ visitor[4].strftime('%Y-%m-%d %H:%M:%S') if visitor[4] else '' }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+  <form method="POST" action="/admin/visitors/archive">
+    <table>
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Course</th>
+          <th>Submitted At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for visitor in visitors %}
+        <tr>
+          <td><input type="checkbox" name="selected_ids" value="{{ visitor[0] }}"></td>
+          <td>{{ visitor[0] }}</td>
+          <td>{{ visitor[1] }}</td>
+          <td>{{ visitor[2] }}</td>
+          <td>{{ visitor[3] }}</td>
+          <td>{{ visitor[4].strftime('%Y-%m-%d %H:%M:%S') if visitor[4] else '' }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <button type="submit" class="submit-btn">DONE</button>
+  </form>
 </body>
 </html>
