@@ -27,6 +27,7 @@ courses_data = {
             {
                 "id": "corporate_accountant",
                 "name": "Corporate Accountant Training",
+                "parent_course": "accounts",
                 "duration": "6 months (3 phases)",
                 "description": "Comprehensive three-phase program covering all aspects of corporate accounting",
                 "pdf_resource": None,  # Space for future PDF upload
@@ -69,16 +70,30 @@ courses_data = {
             {
                 "id": "basic_accounting",
                 "name": "Basic Accounting",
+                "parent_course": "accounts",
                 "duration": "2 months",
                 "description": "Learn the fundamentals of accounting including bookkeeping, financial statements, and basic principles.",
                 "pdf_resource": None,  # Space for future PDF upload
+                "highlights": [
+                    "Accounting fundamentals",
+                    "Journal entries & ledgers",
+                    "Financial statement preparation",
+                    "Basic tax concepts",
+                ],
             },
             {
                 "id": "advanced_accounting",
                 "name": "Advanced Accounting",
+                "parent_course": "accounts",
                 "duration": "3 months",
                 "description": "Advanced topics including consolidation, partnerships, and complex financial transactions.",
                 "pdf_resource": None,  # Space for future PDF upload
+                "highlights": [
+                    "Complex transactions",
+                    "Consolidation accounting",
+                    "Partnership accounting",
+                    "Advanced tax planning",
+                ],
             },
         ],
     },
@@ -89,6 +104,7 @@ courses_data = {
             {
                 "id": "basic_stock_market",
                 "name": "Basic of Stock Market",
+                "parent_course": "stock-market",
                 "duration": "1 month",
                 "description": "Introduction to stock markets, trading fundamentals, and basic investment concepts.",
                 "pdf_resource": None,  # Space for future PDF upload
@@ -103,6 +119,7 @@ courses_data = {
             {
                 "id": "technical_analysis",
                 "name": "Technical Analysis",
+                "parent_course": "stock-market",
                 "duration": "2 months",
                 "description": "Learn chart patterns, indicators, and technical analysis tools for trading decisions.",
                 "pdf_resource": None,  # Space for future PDF upload
@@ -120,6 +137,7 @@ courses_data = {
             {
                 "id": "fundamental_analysis",
                 "name": "Fundamental Analysis",
+                "parent_course": "stock-market",
                 "duration": "2 months",
                 "description": "Analyze company financials, market conditions, and economic factors for investment decisions.",
                 "pdf_resource": None,  # Space for future PDF upload
@@ -133,6 +151,7 @@ courses_data = {
             {
                 "id": "trading_strategy_basic",
                 "name": "Trading Strategy Basic",
+                "parent_course": "stock-market",
                 "duration": "3 months",
                 "description": "Advanced trading strategies, risk management, and portfolio optimization techniques.",
                 "pdf_resource": None,  # Space for future PDF upload
@@ -141,15 +160,12 @@ courses_data = {
                     "Short Call",
                     "Long Put",
                     "Short Put",
-                    # "Advanced trading techniques",
-                    # "Portfolio management",
-                    # "Risk assessment",
-                    # "Real-time trading practice",
                 ],
             },
             {
                 "id": "trading_strategy_advanced",
                 "name": "Trading Strategy Advanced",
+                "parent_course": "stock-market",
                 "duration": "3 months",
                 "description": "Advanced trading strategies, risk management, and portfolio optimization techniques.",
                 "pdf_resource": None,  # Space for future PDF upload
@@ -182,44 +198,86 @@ courses_data = {
             {
                 "id": "python_programming",
                 "name": "Python Programming",
+                "parent_course": "it-courses",
                 "duration": "3 months",
                 "description": "Complete Python programming course from basics to advanced concepts including frameworks.",
                 "pdf_resource": None,  # Space for future PDF upload
+                 "highlights": [
+                "Python fundamentals & syntax",
+                "Object-oriented programming",
+                "Web frameworks (Flask/Django)",
+                "Database integration",
+                ],
             },
             {
                 "id": "web_development",
                 "name": "Web Development",
+                "parent_course": "it-courses",
                 "duration": "4 months",
                 "description": "Full-stack web development including HTML, CSS, JavaScript, and backend technologies.",
                 "pdf_resource": None,  # Space for future PDF upload
+                "highlights": [
+                    "HTML5, CSS3 & JavaScript",
+                    "Responsive web design",
+                    "Frontend frameworks",
+                    "Backend development",
+                ],
             },
             {
                 "id": "data_science",
                 "name": "Data Science",
+                "parent_course": "it-courses",
                 "duration": "5 months",
                 "description": "Learn data analysis, machine learning, and statistical modeling with Python and R.",
                 "pdf_resource": None,  # Space for future PDF upload
+                "highlights": [
+                    "Data analysis with Python",
+                    "Machine learning algorithms",
+                    "Data visualization",
+                    "Statistical modeling",
+                ],
             },
             {
                 "id": "digital_marketing",
                 "name": "Digital Marketing",
+                "parent_course": "it-courses",
                 "duration": "2 months",
                 "description": "SEO, social media marketing, content strategy, and online advertising techniques.",
                 "pdf_resource": None,  # Space for future PDF upload
+                 "highlights": [
+                    "SEO & SEM strategies",
+                    "Social media marketing",
+                    "Content marketing",
+                    "Analytics & reporting",
+                ],
             },
             {
                 "id": "devops",
                 "name": "DevOps Engineering",
+                "parent_course": "it-courses",
                 "duration": "4 months",
                 "description": "Master CI/CD, containerization, automation, and cloud infrastructure management.",
                 "pdf_resource": None,  # Space for future PDF upload
+                 "highlights": [
+                    "CI/CD pipeline setup",
+                    "Docker & Kubernetes",
+                    "Infrastructure automation",
+                    "Monitoring & logging",
+                ],
             },
             {
                 "id": "aws_cloud",
                 "name": "AWS Cloud Computing",
+                "parent_course": "it-courses",
                 "duration": "3 months",
                 "description": "Comprehensive AWS training covering EC2, S3, Lambda, and cloud architecture.",
                 "pdf_resource": None,  # Space for future PDF upload
+                "highlights": [
+                    "AWS core services",
+                    "EC2 & cloud architecture",
+                    "Security & compliance",
+                    "Cost optimization",
+                ],
             },
         ],
     },
@@ -299,6 +357,9 @@ def get_all_courses_for_search():
                     "id": course["id"],
                     "name": course["name"],
                     "category": category["title"],
+                    "parent_course": course['parent_course']
+                    # This "parent_course" field is used to construct the url for "Course-Search-Dropdown"
+                    # in the navbar in base.html
                 }
             )
     return courses

@@ -55,11 +55,11 @@
           <!-- Search and Enquiry -->
           <div class="d-flex align-items-center gap-3">
             <!-- Course Search Dropdown -->
-            <form action="{{ url_for('search_course') }}" method="GET" class="d-flex">
-              <select name="course" class="form-select form-select-sm me-2" onchange="this.form.submit()" required>
+            <form class="d-flex" id="navbarCourseSearchForm">
+              <select name="course" class="form-select form-select-sm me-2" onchange="redirectToCourseCard(this.value)">
                 <option value="">Search Courses</option>
                 {% for course in search_courses %}
-                <option value="{{ course.id }}">{{ course.name }}</option>
+                <option value="/{{ course.parent_course }}#{{ course.id }}">{{ course.name }}</option>
                 {% endfor %}
               </select>
             </form>
