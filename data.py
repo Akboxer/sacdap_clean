@@ -2,17 +2,19 @@ import psycopg2
 import os
 
 # PostgreSQL connection
-DB_NAME = os.getenv("DB_NAME", "sacdap_2")
-DB_USER = os.getenv("DB_USER", "postgres")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "123123")
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-
+import psycopg2
+import os
+from urllib.parse import urlparse
 
 def get_connection():
-    return psycopg2.connect(
-        dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, port=DB_PORT
-    )
+    # Get the full DATABASE_URL
+    db_url = os.environ.get("DATABASE_URL")
+
+    if not db_url:
+        raise ValueError("DATABASE_URL environment variable not set")
+
+    return psycopg2.connect(db_url)
+
 
 
 enrollments = []
