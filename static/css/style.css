@@ -19,6 +19,10 @@
   --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
+html {
+  scroll-padding-top: 120px;
+}
+
 /* Body and Typography */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -594,4 +598,17 @@ Initial Registration Pop-up styling */
   border-color: var(--sacdap-white);
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*
+
+Course Search Button in Navbar Styles */
+
+@media (max-width: 991.98px) {
+  .navbar-collapse .dropdown-menu {
+    max-height: 70vh;
+    font-size: small;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
