@@ -7,7 +7,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 logging.basicConfig(level=logging.DEBUG)
 
 # Create the app
-app = Flask(__name__,host_matching=True)
+app = Flask(__name__,host_matching=True,static_host='sacdap.com')
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
