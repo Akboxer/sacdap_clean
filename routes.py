@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for, flash
-from app import app
+from app_instance import app
 from forms import EnrollmentForm, ContactForm
 from data import courses_data, add_enrollment, add_contact, get_course_by_id, get_all_courses_for_search, get_connection 
 import logging
