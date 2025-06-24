@@ -508,11 +508,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-// This function is called by the Course Selection search form
-// in the navbar
-function redirectToCourseCard(targetUrl) {
-  if (targetUrl) {
-    window.location.href = targetUrl;
-  }
-}

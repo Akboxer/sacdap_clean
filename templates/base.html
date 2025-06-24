@@ -33,7 +33,7 @@
         </button>
 
         <!-- Navigation Menu -->
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
               <a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" href="{{ url_for('home') }}"> <i class="fas fa-home me-1"></i>HOME </a>
@@ -54,15 +54,19 @@
 
           <!-- Search and Enquiry -->
           <div class="d-flex align-items-center gap-3">
-            <!-- Course Search Dropdown -->
-            <form class="d-flex" id="navbarCourseSearchForm">
-              <select name="course" class="form-select form-select-sm me-2" onchange="redirectToCourseCard(this.value)">
-                <option value="">Search Courses</option>
+            <div class="dropdown d-flex align-items-center">
+              <button class="btn btn-lmd dropdown-toggle border rounded px-3 py-2 text-muted gap-2" type="button" id="dropdownMenuCourses" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-search me-2 text-danger"></i>Search Courses</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuCourses">
+                <li class="d-none d-md-block"><h6 class="dropdown-header">Explore Our Programs</h6></li>
+                <li><hr class="dropdown-divider" /></li>
                 {% for course in search_courses %}
-                <option value="/{{ course.parent_course }}#{{ course.id }}">{{ course.name }}</option>
+                <li>
+                  <a class="dropdown-item" href="/{{ course.parent_course }}#{{ course.id }}"> {{ course.name }} </a>
+                </li>
                 {% endfor %}
-              </select>
-            </form>
+                <li><hr class="dropdown-divider" /></li>
+              </ul>
+            </div>
 
             <!-- Enquiry Button -->
             <a href="{{ url_for('enroll') }}" class="btn btn-danger btn-sm"> <i class="fas fa-user-plus me-1"></i>ENQUIRY </a>
